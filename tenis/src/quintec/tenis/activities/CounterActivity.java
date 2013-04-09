@@ -508,9 +508,9 @@ public class CounterActivity extends LocaleActivity {
 	}
 	
 	private void calculateIfChangeSides() {
+        // TODO check this 
 		boolean changeSides = score.getChangeSides();
 		if (changeSides) {
-			//this
 			this.player1IsOnHisSide = !player1IsOnHisSide;
 			setPlayerNames();
 		}
