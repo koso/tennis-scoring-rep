@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- STYLES FOR TEXTVIEWS -->
+
+    <style name="TextStyleScore">
+        <item name="android:textColor">@color/color_light_grey_a</item>
+        <item name="android:textSize">19dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyleSet">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">19dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="TextStyleBold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="TextStyleRegular">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+</resources>

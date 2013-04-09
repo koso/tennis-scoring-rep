@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<color name="color_white">#fff</color>
+	<color name="color_black">#000</color>
+	<color name="color_black_20_opacity">#20000000</color>
+	<color name="color_black_60_opacity">#60000000</color>
+	<color name="light_orange">#ea650e</color>
+	<color name="color_orange">#ec7324</color>
+	<color name="color_transparent">#01000000</color>
+	<color name="color_f2f2f2">#F2F2F2</color>
+	<color name="color_grey">#999</color>
+	<color name="color_grey_semitransparent">#99999999</color>
+	<color name="color_dark_grey">#333</color>
+	<color name="color_light_grey_a">#aaa</color>
+	<color name="color_light_grey_b">#bbb</color>
+	<color name="color_incomplete_item">#fff08d</color>
+	<color name="color_complete_item">#91ff99</color>
+	<color name="undo_green">#a4c639</color>
+	<color name="list_divider_color">#c0c1c1</color>
+	<color name="grey_03">#D2D2D2</color>
+	
+</resources>

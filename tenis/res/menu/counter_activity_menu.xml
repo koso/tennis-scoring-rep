@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <group android:id="@+id/group1" >
+        <item
+            android:id="@+id/menuItemCounterUndo"
+            android:title="@string/undo"
+            android:icon="@drawable/ic_menu_undo">
+        </item>
+        <item
+            android:id="@+id/menuItemCounterRedo"
+            android:title="@string/redo"
+            android:icon="@drawable/ic_menu_redo">
+        </item>
+        <item
+            android:id="@+id/menuItemCounterStop"
+            android:title="@string/stop_match"
+            android:icon="@drawable/ic_menu_pause">
+        </item>
+        <item
+            android:id="@+id/menuItemCounterEditMatch"
+            android:title="@string/edit_match"
+            android:icon="@drawable/ic_menu_edit">
+        </item>
+        <item
+            android:id="@+id/menuItemCounterSettings"
+            android:title="@string/settings"
+            android:icon="@drawable/ic_menu_settings">
+        </item>
+    </group>
+
+</menu>

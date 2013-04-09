@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tennis Scoring</string>
+    <string name="info">Info</string>
+    <string name="settings">Settings</string>
+    <string name="undo">Undo</string>
+    <string name="redo">Redo</string>
+    <string name="stop_match">Stop match</string>
+    <string name="edit_match">Edit match</string>
+    <string name="select_language">Select language:</string>
+    <string name="language">Language</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="start_match">Next</string>
+    <string name="match_selection">Match selection</string>
+    <string name="game_profile">Game profile</string>
+    <string name="Service">Service:</string>
+    <string name="service_dialog_title">Who is serving first?</string>
+    <string name="service_dialog_message">Please select player\s name.</string>
+    <string name="vs">vs.</string>
+    <string name="AppName">Tenis Math</string>
+    <string name="Version">Version 1.0.0</string>
+    <string name="Copy">Copyright (c) 2012</string>
+    <string name="Qint">Qintec s.r.o.</string>
+    <string name="Rights">All rights reserved</string>
+    <string name="two_sets_without_tie_break">2 sets without tie break</string>
+    <string name="three_sets_without_tie_break">3 sets without tie break</string>
+    <string name="two_sets_with_tie_break">2 sets with tie break</string>
+    <string name="three_sets_with_tie_break">3 sets with tie break</string>
+    <string name="two_sets_with_super_tie_break">2 sets with super tie break</string>
+    <string name="three_sets_with_super_tie_break">3 sets with super tie break</string>
+    <string name="player_one">Player 1:</string>
+    <string name="player_two">Player 2:</string>
+    <string name="team_one">Team 1:</string>
+    <string name="team_two">Team 2:</string>
+    <string name="restartApp">Please, restart application for full translation.</string>
+    <string name="dialog_match_ended">Match finished.</string>
+    <string name="No">No</string>
+    <string name="Yes">Yes</string>
+    <string name="Host_C">Host:</string>
+    <string name="Port_C">Port:</string>
+    <string name="Database_C">Database:</string>
+    <string name="User_C">User:</string>
+    <string name="Pass_C">Pass:</string>
+    <string name="networkError">Network connection error. Please check database settings.</string>
+    <string name="noMatches">No matches</string>
+    <string name="loading">Loading...</string>
+    <string name="DatabaseSettings">Database settings</string>
+    <string name="classic_points">Classic points</string>
+     <string name="tiebreak_points">Tiebreak points</string>
+
+    <string-array name="languages">
+        <item>Slovensky</item>
+        <item>English</item>
+    </string-array>
+
+</resources>
