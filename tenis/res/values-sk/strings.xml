@@ -14,8 +14,9 @@
     <string name="back">Back</string>
     <string name="next">Dalej</string>
     <string name="start_match">Next</string>
-    <string name="match_selection">Match selection</string>
-    <string name="game_profile">Game profile:</string>
+    <string name="match_selection">Zapasy</string>
+    <string name="game_profile">Herny profil:</string>
+    <string name="game_settings">Nastavenie zapasu</string>
     <string name="Service">Service:</string>
     <string name="service_dialog_title">Who is serving first?</string>
     <string name="service_dialog_message">Please select player\s name.</string>
