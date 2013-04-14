@@ -116,12 +116,13 @@ public class TenisActivity extends LocaleActivity {
 			public void onClick(View v) {
 				Intent i;
 				Score pausedScore = LocalDbQuery.getPausedScore(getApplicationContext(), matchh.getId());
-//				if (pausedScore != null) {
-//					i= new Intent(getApplicationContext(), CounterActivity.class);
-//					i.putExtra(GameProfileActivity.GAME_PROFILE_EXTRASS_KEY, pausedScore.getGameProfile());
-//				}
-//				else {
+				if (pausedScore != null) {
+					i= new Intent(getApplicationContext(), CounterActivity.class);
+					i.putExtra(GameProfileActivity.GAME_PROFILE_EXTRASS_KEY, pausedScore.getGameProfile());
+				}
+				else {
 					i= new Intent(getApplicationContext(), GameProfileActivity.class);
+			    }
 				
 				i.putExtra(PLAYER_ONE_TEAM_1_NAME_BUNDLE, matchh.getPlayer_one_team_one());
 				i.putExtra(PLAYER_ONE_TEAM_2_NAME_BUNDLE, matchh.getPlayer_one_team_two());

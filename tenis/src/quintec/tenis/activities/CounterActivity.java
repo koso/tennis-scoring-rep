@@ -74,7 +74,7 @@ public class CounterActivity extends LocaleActivity {
 	private int currentValueForRedo;
 	private int numberOfUndo = 0;
 	
-	boolean player1IsOnHisSide = true;
+	private boolean player1IsOnHisSide = true;
 	
 	/*------------------------------------*/
 	/*         OVERRIDE METHODES          */
@@ -88,7 +88,7 @@ public class CounterActivity extends LocaleActivity {
 		Intent intent = getIntent();
 		int gameProfile = intent.getIntExtra(GameProfileActivity.GAME_PROFILE_EXTRASS_KEY, 1);
 		pl1id = intent.getStringExtra(TenisActivity.PLAYER_ONE_TEAM_1_NAME_BUNDLE);
-		pl2id = intent.getStringExtra(TenisActivity.PLAYER_TWO_TEAM_1_NAME_BUNDLE);
+		pl2id = intent.getStringExtra(TenisActivity.PLAYER_ONE_TEAM_2_NAME_BUNDLE);
 		matchId = intent.getIntExtra(TenisActivity.MATCH_ID_BUNDLE, 0);
 		matchIsSingle = intent.getBooleanExtra(TenisActivity.MATCH_IS_SINGLE_BUNDLE,true);
 		if (!matchIsSingle) {
@@ -716,7 +716,7 @@ public class CounterActivity extends LocaleActivity {
 	public void pauseMatchMenu() {
 		Match.setMatchState(Match.STATE.INTERUPTED, matchId, getApplicationContext());
 		LocalDbQuery.deleteRowsOnMatchPause(getApplicationContext());
-//		LocalDbInsert.insertScore(score, getApplicationContext(), 1, 1, 0);
+		LocalDbInsert.insertScore(score, getApplicationContext(), 1, 1, 0);
 		setResult(Activity.RESULT_OK);
 		finish();
 	}
