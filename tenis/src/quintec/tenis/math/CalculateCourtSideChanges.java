@@ -19,7 +19,7 @@ public class CalculateCourtSideChanges {
 				result = true;
 			}
 		}
-		else if (gameMode != Score.GAME_MODE.TIEBREAK) {
+		else if (gameMode == Score.GAME_MODE.TIEBREAK) {
 			int sumTie = 0;
 			sumTie += score.getPl1TieScore();
 			sumTie += score.getPl2TieScore();
