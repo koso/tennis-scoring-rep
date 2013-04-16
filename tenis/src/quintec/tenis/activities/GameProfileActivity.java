@@ -109,7 +109,7 @@ public class GameProfileActivity extends LocaleActivity {
 				Intent intent = new Intent(getApplicationContext(), CounterActivity.class);
 				intent.putExtra(GAME_PROFILE_EXTRASS_KEY, gameProfile);
 				intent.putExtra(TenisActivity.PLAYER_ONE_TEAM_1_NAME_BUNDLE, pl1id);
-				intent.putExtra(TenisActivity.PLAYER_TWO_TEAM_1_NAME_BUNDLE, pl2id);
+				intent.putExtra(TenisActivity.PLAYER_ONE_TEAM_2_NAME_BUNDLE, pl2id);
 				if (!matchIsSingle) {
 					intent.putExtra(TenisActivity.PLAYER_TWO_TEAM_1_NAME_BUNDLE, pl12id);
 					intent.putExtra(TenisActivity.PLAYER_TWO_TEAM_2_NAME_BUNDLE, pl22id);
