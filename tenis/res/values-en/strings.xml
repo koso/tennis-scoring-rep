@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="_ok">Ok</string>
     <string name="app_name">Tennis Scoring</string>
     <string name="info">Info</string>
     <string name="settings">Settings</string>
@@ -13,13 +14,14 @@
     <string name="save">Save</string>
     <string name="back">Back</string>
     <string name="next">Next</string>
-    <string name="start_match">Next</string>
+    <string name="start_match">Start match</string>
+    <string name="setupAndStart_match">Setup and start match</string>
     <string name="match_selection">Matches</string>
     <string name="game_profile">Game profile</string>
     <string name="game_settings">Game setup</string>
     <string name="Service">Service:</string>
-    <string name="service_dialog_title">Who is serving first?</string>
-    <string name="service_dialog_message">Please select player\s name.</string>
+    <string name="service_dialog_title">Serving</string>
+    <string name="service_dialog_message">Please select player/team, which is serving first.</string>
     <string name="vs">vs.</string>
     <string name="AppName">Tenis Math</string>
     <string name="Version">Version 1.0.0</string>
@@ -48,10 +50,18 @@
     <string name="networkError">Network connection error. Please check database settings.</string>
     <string name="noMatches">No matches</string>
     <string name="loading">Loading...</string>
-    <string name="DatabaseSettings">Database settings</string>
+    <string name="DatabaseSettings">Nastavenia databázy</string>
     <string name="classic_points">Classic points</string>
      <string name="tiebreak_points">Tiebreak points</string>
-
+     
+    <string name="ballChangeDialog_title">Ball change</string>
+    <string name="ballChangeDialog_prepare">Please, prepare balls for change.</string>
+    <string name="ballChangeDialog_changeBalls">Please, change balls.</string>
+    
+    <string name="teamSideDialog_title">Setup sides.</string>
+    <string name="teamSideDialog_message">Please, select which player/team will start on your left.</string>
+    <string name="teamSidesChenged">Players changed sides.</string>
+    
     <string-array name="languages">
         <item>Slovensky</item>
         <item>English</item>

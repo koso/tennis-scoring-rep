@@ -125,7 +125,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/button_statelist"
-            android:text="@string/start_match"
+            android:text="@string/setupAndStart_match"
             android:textStyle="bold" />
     </LinearLayout>
 
