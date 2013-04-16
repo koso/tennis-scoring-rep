@@ -14,43 +14,45 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class EditMatchActivity extends LocaleActivity {
+	
 	private TextView pl1NameTV, pl12NameTV, pl1ScoreTV, pl1Set1TV, pl1Set2TV, pl1Set3TV, pl1Set4TV, pl1Set5TV, 
     pl2NameTV,pl22NameTV, pl2ScoreTV, pl2Set1TV, pl2Set2TV, pl2Set3TV, pl2Set4TV, pl2Set5TV, gameType;
-	Score score;
-	String pl1Name, pl2Name, pl12Name, pl22Name;
-	boolean matchIsSingle;
-	ImageView score1PlusIMG, score1MinusIMG, score2PlusIMG, score2MinusIMG, pl1SetPlusIMG, 
+
+	private ImageView score1PlusIMG, score1MinusIMG, score2PlusIMG, score2MinusIMG, pl1SetPlusIMG, 
 	        pl1SetMinusIMG, pl2SetPlusIMG, pl2SetMinusIMG;
 	private ImageView servicePl1Score, servicePl2Score;
-	TextView score1EditTV, score2EditTV, set1EdittTV, set2EditTV;
-	RadioButton tiebrakRadio, classicRadio, service1Radio, service2Radio;
+	private TextView score1EditTV, score2EditTV, set1EdittTV, set2EditTV;
+	private RadioButton tiebrakRadio, classicRadio, service1Radio, service2Radio;
+	
+	private String pl1Name, pl2Name, pl12Name, pl22Name;
+	private boolean matchIsSingle;
+	private Score score;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
-		score = new Score();
+		score = (Score) intent.getSerializableExtra("score");
 		pl1Name = intent.getStringExtra(CounterActivity.PLAYER_ONE_TEAM_1_NAME_BUNDLE);
 		pl2Name = intent.getStringExtra(CounterActivity.PLAYER_ONE_TEAM_2_NAME_BUNDLE);
-		score.setMatchId(intent.getIntExtra(CounterActivity.MATCH_ID_BUNDLE, 0));
 		matchIsSingle = intent.getBooleanExtra(CounterActivity.MATCH_IS_SINGLE_BUNDLE,true);
 		if (!matchIsSingle) {
 			pl12Name = intent.getStringExtra(CounterActivity.PLAYER_TWO_TEAM_1_NAME_BUNDLE);
 			pl22Name = intent.getStringExtra(CounterActivity.PLAYER_TWO_TEAM_2_NAME_BUNDLE);
 		}
-		score.setPl1_score(intent.getIntExtra(CounterActivity.PLAYER_ONE_SCORE, 0));
-		score.setPl2_score(intent.getIntExtra(CounterActivity.PLAYER_TWO_SCORE, 0));
-		score.setPl1_set1(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET1, 0));
-		score.setPl1_set2(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET2, 0));
-		score.setPl1_set3(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET3, 0));
-		score.setPl1_set4(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET4, 0));
-		score.setPl1_set5(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET5, 0));
-		score.setPl2_set1(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET1, 0));
-		score.setPl2_set2(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET2, 0));
-		score.setPl2_set3(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET3, 0));
-		score.setPl2_set4(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET4, 0));
-		score.setPl2_set5(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET5, 0));
-		score.setWhichPlayerServing(intent.getIntExtra(CounterActivity.SERVICE, 0));
+//		score.setPl1_score(intent.getIntExtra(CounterActivity.PLAYER_ONE_SCORE, 0));
+//		score.setPl2_score(intent.getIntExtra(CounterActivity.PLAYER_TWO_SCORE, 0));
+//		score.setPl1_set1(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET1, 0));
+//		score.setPl1_set2(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET2, 0));
+//		score.setPl1_set3(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET3, 0));
+//		score.setPl1_set4(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET4, 0));
+//		score.setPl1_set5(intent.getIntExtra(CounterActivity.PLAYER_ONE_SET5, 0));
+//		score.setPl2_set1(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET1, 0));
+//		score.setPl2_set2(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET2, 0));
+//		score.setPl2_set3(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET3, 0));
+//		score.setPl2_set4(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET4, 0));
+//		score.setPl2_set5(intent.getIntExtra(CounterActivity.PLAYER_TWO_SET5, 0));
+//		score.setWhichPlayerServing(intent.getIntExtra(CounterActivity.SERVICE, 0));
 		setContentView(R.layout.edit_score_activity);
 		referenceViews();
 		setPlayerNames();
@@ -59,7 +61,6 @@ public class EditMatchActivity extends LocaleActivity {
 		setServiceIndentificator(score);
 		setSetviceListener();
 		setOnScoreListeners();
-		
 	}
 	
 	private void referenceViews(){

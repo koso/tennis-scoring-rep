@@ -16,6 +16,7 @@ import quintec.tenis.dialogs.BallsChangeDialog;
 import quintec.tenis.dialogs.EndMatchDialog;
 import quintec.tenis.dialogs.EndMatchOnBackPressedDIalog;
 import quintec.tenis.dialogs.ServiceDialog;
+import quintec.tenis.dialogs.TeamSidePickerDialog;
 import quintec.tenis.math.BrainMath;
 import quintec.tenis.math.CalculateBallsChange;
 import quintec.tenis.math.CalculateBallsChange.BallsChange;
@@ -36,30 +37,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CounterActivity extends LocaleActivity {
-
+	
+	public static final String SCORE_BUNDLE = "SCORE_BUNDLE";
 	public static final String PLAYER_ONE_TEAM_1_NAME_BUNDLE = "PLAYER_ONE_TEAM_1_NAME_BUNDLE";
 	public static final String PLAYER_TWO_TEAM_1_NAME_BUNDLE = "PLAYER_TWO_TEAM_1_NAME_BUNDLE";
 	public static final String PLAYER_ONE_TEAM_2_NAME_BUNDLE = "PLAYER_ONE_TEAM_2_NAME_BUNDLE";
 	public static final String PLAYER_TWO_TEAM_2_NAME_BUNDLE = "PLAYER_TWO_TEAM_2_NAME_BUNDLE";
 	public static final String MATCH_IS_SINGLE_BUNDLE = "MATCH_IS_SINGLE_BUNDLE";
-	public static final String MATCH_ID_BUNDLE = "MATCH_ID";
-	public static final String GAME_TYPE_BUNDLE = "GAME_TYPE_BUNDLE";
-	public static final String PLAYER_ONE_SCORE = "PLAYER_ONE_SCORE";
-	public static final String PLAYER_TWO_SCORE = "PLAYER_TWO_SCORE";
-	public static final String PLAYER_TWO_SET1 = "PLAYER_TWO_SET1";
-	public static final String PLAYER_ONE_SET1 = "PLAYER_ONE_SET1";
-	public static final String PLAYER_ONE_SET2 = "PLAYER_ONE_SET2";
-	public static final String PLAYER_ONE_SET3 = "PLAYER_ONE_SET3";
-	public static final String PLAYER_ONE_SET4 = "PLAYER_ONE_SET4";
-	public static final String PLAYER_ONE_SET5 = "PLAYER_ONE_SET5";
-	public static final String PLAYER_TWO_SET2 = "PLAYER_TWO_SET2";
-	public static final String PLAYER_TWO_SET3 = "PLAYER_TWO_SET3";
-	public static final String PLAYER_TWO_SET4 = "PLAYER_TWO_SET4";
-	public static final String PLAYER_TWO_SET5 = "PLAYER_TWO_SET5";
-	public static final String SERVICE = "SERVICE";
-	
 	
 	private TextView pl1NameTV, pl12NameTV, pl1ScoreTV, pl1Set1TV, pl1Set2TV, pl1Set3TV, pl1Set4TV, pl1Set5TV, 
 	         pl2NameTV,pl22NameTV, pl2ScoreTV, pl2Set1TV, pl2Set2TV, pl2Set3TV, pl2Set4TV, pl2Set5TV, gameType;
@@ -177,6 +164,7 @@ public class CounterActivity extends LocaleActivity {
 				
 	        case R.id.menuItemCounterEditMatch:
 	        	Intent i = new Intent(this, EditMatchActivity.class);
+	        	i.putExtra("score", score);
 	        	i.putExtra(PLAYER_ONE_TEAM_1_NAME_BUNDLE, pl1id);
 				i.putExtra(PLAYER_ONE_TEAM_2_NAME_BUNDLE, pl2id);
 				if (!matchIsSingle) {
@@ -187,22 +175,22 @@ public class CounterActivity extends LocaleActivity {
 				else {
 					i.putExtra(MATCH_IS_SINGLE_BUNDLE, true);
 				}
-				i.putExtra(MATCH_ID_BUNDLE, score.getMatchId());
-				i.putExtra(PLAYER_ONE_SCORE, score.getPl1_score());
-				i.putExtra(PLAYER_TWO_SCORE, score.getPl2_score());
-				i.putExtra(PLAYER_ONE_SET1, score.getPl1_set1());
-				i.putExtra(PLAYER_TWO_SET1, score.getPl2_set1());
-				i.putExtra(PLAYER_ONE_SET2, score.getPl1_set2());
-				i.putExtra(PLAYER_TWO_SET2, score.getPl2_set2());
-				i.putExtra(PLAYER_ONE_SET3, score.getPl1_set3());
-				i.putExtra(PLAYER_TWO_SET3, score.getPl2_set3());
-				i.putExtra(PLAYER_ONE_SET4, score.getPl1_set4());
-				i.putExtra(PLAYER_TWO_SET4, score.getPl2_set4());
-				i.putExtra(PLAYER_ONE_SET5, score.getPl1_set5());
-				i.putExtra(PLAYER_TWO_SET5, score.getPl2_set5());
-				i.putExtra(SERVICE, score.getWhichPlayerServing());
-	        	startActivity(i);
-	        	//TODO editMatch
+				
+				startActivity(i);
+//				i.putExtra(MATCH_ID_BUNDLE, score.getMatchId());
+//				i.putExtra(PLAYER_ONE_SCORE, score.getPl1_score());
+//				i.putExtra(PLAYER_TWO_SCORE, score.getPl2_score());
+//				i.putExtra(PLAYER_ONE_SET1, score.getPl1_set1());
+//				i.putExtra(PLAYER_TWO_SET1, score.getPl2_set1());
+//				i.putExtra(PLAYER_ONE_SET2, score.getPl1_set2());
+//				i.putExtra(PLAYER_TWO_SET2, score.getPl2_set2());
+//				i.putExtra(PLAYER_ONE_SET3, score.getPl1_set3());
+//				i.putExtra(PLAYER_TWO_SET3, score.getPl2_set3());
+//				i.putExtra(PLAYER_ONE_SET4, score.getPl1_set4());
+//				i.putExtra(PLAYER_TWO_SET4, score.getPl2_set4());
+//				i.putExtra(PLAYER_ONE_SET5, score.getPl1_set5());
+//				i.putExtra(PLAYER_TWO_SET5, score.getPl2_set5());
+//				i.putExtra(SERVICE, score.getWhichPlayerServing());
 				return true;
 				
 	        case R.id.menuItemCounterSettings:
@@ -508,11 +496,11 @@ public class CounterActivity extends LocaleActivity {
 	}
 	
 	private void calculateIfChangeSides() {
-        // TODO check this 
-		boolean changeSides = score.getChangeSides();
+        boolean changeSides = score.getChangeSides();
 		if (changeSides) {
 			this.player1IsOnHisSide = !player1IsOnHisSide;
 			setPlayerNames();
+			Toast.makeText(this, R.string.teamSidesChenged, Toast.LENGTH_LONG).show();
 		}
 	}
 	
@@ -674,6 +662,18 @@ public class CounterActivity extends LocaleActivity {
 		dialog.show(fm, "serviceDIalog");
 	}
 	
+	private void showSidesPickerDialog() {
+		FragmentManager fm = getSupportFragmentManager();
+		DialogFragment dialog;
+		if (matchIsSingle) 
+			dialog = TeamSidePickerDialog.createDialog(pl1id, pl2id);
+		else 
+			dialog = TeamSidePickerDialog.createDialog(pl1id, pl2id, pl12, pl22);
+		dialog.setCancelable(false);
+		dialog.show(fm, "sidePickerDialog");
+	}
+	
+	
 	private void endMatch() {
 		buttonScore1.setEnabled(false);
 		buttonScore2.setEnabled(false);
@@ -691,7 +691,9 @@ public class CounterActivity extends LocaleActivity {
 	}
 	
 	
-	public void setService(int whichPlayerServing) {
+	public void setServiceAtStart(int whichPlayerServing) {
+		showSidesPickerDialog();
+		
 		score.setWhichPlayerServing(whichPlayerServing);
 		setServiceIndentificator(score);
 		if (isOnline()) {
@@ -700,9 +702,19 @@ public class CounterActivity extends LocaleActivity {
 		}
 	}
 	
+	public void setSidesAtStart(TeamSides teamSide) {
+		if (teamSide == TeamSides.NORMAL) 
+			player1IsOnHisSide = true;
+		else 
+			player1IsOnHisSide = false;
+		
+		setPlayerNames();
+	}
+	
 	/******** METHODS FOR DIALOG AFTER MATCH FINISH ********/
 	public void undo() {
-		// TODO  undo after match finish
+		// TODO  check if it's working
+		undoMenu();
 	}
 	
 	public void finishMatch() {
@@ -722,21 +734,16 @@ public class CounterActivity extends LocaleActivity {
 	}
 	
 	private void undoMenu() {
-		
-			numberOfUndo = numberOfUndo + 1;
-				Score scoreForUndo = LocalDbQuery.getPreviouseScore(getApplicationContext(), 
-						score.getMatchId(), undoRedo.get(currentValueForRedo-1));
-				currentValueForRedo = currentValueForRedo -1;
-				showScore(scoreForUndo);
-				setVisiblityForSets(scoreForUndo);
-				setServiceIndentificator(scoreForUndo);
-				score = scoreForUndo;
-				int isOnWeb = 0;
-				if (isOnline()) {
-					isOnWeb = Qscore.insertScoreChange(score,getApplicationContext());
-				}
-				int id = LocalDbInsert.insertScore(score, getApplicationContext(), isOnWeb, 0, 0);
-				undoRedo.add(id);
+		numberOfUndo = numberOfUndo + 1;
+		Score scoreForUndo = LocalDbQuery.getPreviouseScore(
+				getApplicationContext(), score.getMatchId(),
+				undoRedo.get(currentValueForRedo - 1));
+		currentValueForRedo = currentValueForRedo - 1;
+		showScore(scoreForUndo);
+		setVisiblityForSets(scoreForUndo);
+		setServiceIndentificator(scoreForUndo);
+		score = scoreForUndo;
+		new InsertScoreChange(score).execute();
 	}
 	
 	private void redoMenu() {
@@ -748,12 +755,7 @@ public class CounterActivity extends LocaleActivity {
 		setVisiblityForSets(scoreForRedo);
 		setServiceIndentificator(scoreForRedo);
 		score = scoreForRedo;
-		int isOnWeb = 0;
-		if (isOnline()) {
-			isOnWeb = Qscore.insertScoreChange(score,getApplicationContext());
-		}
-		int id = LocalDbInsert.insertScore(score, getApplicationContext(), isOnWeb, 0, 0);
-		undoRedo.add(id);
+		new InsertScoreChange(score).execute();
 	}
 	
 	 private class InsertScore extends AsyncTask<Score , Void, Integer>{
@@ -768,7 +770,6 @@ public class CounterActivity extends LocaleActivity {
 			protected Integer doInBackground(Score... params) {
 				int isOnWeb = 0;
 				if (isOnline()) {
-					
 					try {
 						isOnWeb = Qscore.insertScoreChange(this.score, getApplicationContext());
 					} catch (Exception e) {
@@ -789,4 +790,44 @@ public class CounterActivity extends LocaleActivity {
 				numberOfUndo = 0;
 			}
 	    }
+	 
+	 private class InsertScoreChange extends AsyncTask<Score , Void, Integer>{
+         Score score;
+         
+		 public InsertScoreChange(Score score) {
+			this.score = score;
+		}
+	    	
+			@Override
+			protected Integer doInBackground(Score... params) {
+				int isOnWeb = 0;
+				if (isOnline()) {
+					isOnWeb = Qscore.insertScoreChange(score,getApplicationContext());
+				}
+				int id = LocalDbInsert.insertScore(score, getApplicationContext(), isOnWeb, 0, 0);
+				
+				return id;
+			}
+			
+			@Override
+			protected void onPostExecute(Integer id) {
+				super.onPostExecute(id);
+				
+				undoRedo.add(id);
+			}
+	    }
+	 
+	public static enum TeamSides {
+		NORMAL(1), REVERSE(2);
+
+		private int value;
+
+		private TeamSides(int value) {
+			this.value = value;
+		}
+
+		public int getValue() {
+			return value;
+		}
+	}
 }

@@ -1,5 +1,6 @@
 package quintec.tenis.dialogs;
 
+import quintec.tenis.R;
 import quintec.tenis.math.CalculateBallsChange.BallsChange;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -26,19 +27,20 @@ public class BallsChangeDialog extends DialogFragment{
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-		if (mode == BallsChange.CHANGE_BALLS) {
-			builder.setMessage("Please change balls.");
-		}
-		else {
-			builder.setMessage("Please prepare balls for changing.");
-		}
-		builder.setPositiveButton("Cancel", new OnClickListener() {
+		builder.setTitle(R.string.ballChangeDialog_title);
+		if (mode == BallsChange.CHANGE_BALLS) 
+			builder.setMessage(R.string.ballChangeDialog_changeBalls);
+		else 
+			builder.setMessage(R.string.ballChangeDialog_prepare);
+		
+		builder.setPositiveButton(R.string._ok, new OnClickListener() {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-			       dismiss();
+			      dismiss();
 			}
 		});
+		
 		return builder.create();
 	}
 }

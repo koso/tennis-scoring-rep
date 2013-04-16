@@ -24,6 +24,15 @@
                 android:text="@string/edit_match"
                 android:textColor="@color/color_white"
                 android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/editMatch_saveImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/common_selector"
+                android:src="@drawable/common_save_ab" />
         </LinearLayout>
     </LinearLayout>
 
@@ -324,10 +333,10 @@
                         android:id="@+id/edit_service1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:button="@drawable/radio_button_selector"
                         android:checked="true"
                         android:text="@string/player_one"
-                        android:layout_weight="1"
                         android:textColor="@color/color_black" />
 
                     <RadioButton
@@ -378,19 +387,19 @@
                             android:id="@+id/edit__classicScore"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:button="@drawable/radio_button_selector"
                             android:checked="true"
                             android:text="@string/classic_points"
-                            android:textColor="@color/color_black"
-                            android:layout_weight="1" />
+                            android:textColor="@color/color_black" />
 
                         <RadioButton
                             android:id="@+id/edit__tieScore"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:button="@drawable/radio_button_selector"
                             android:text="@string/tiebreak_points"
-                            android:layout_weight="1"
                             android:textColor="@color/color_black" />
                     </RadioGroup>
                 </LinearLayout>
@@ -404,8 +413,8 @@
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center_horizontal" >
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
 
                         <ImageView
                             android:id="@+id/edit_plusScore1"
@@ -432,8 +441,8 @@
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center_horizontal" >
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
 
                         <ImageView
                             android:id="@+id/edit_plusScore2"
@@ -450,7 +459,7 @@
                             android:textSize="22dp" />
 
                         <ImageView
-                           android:id="@+id/edit_minusScore2"
+                            android:id="@+id/edit_minusScore2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_ai_order_minus" />
@@ -477,14 +486,15 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:background="@color/list_divider_color"
-                android:gravity="center_horizontal" >
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
 
                 <Spinner
                     android:id="@+id/spinner1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" />
+
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -494,8 +504,8 @@
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center_horizontal" >
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
 
                         <ImageView
                             android:id="@+id/edit_plusSet1"
@@ -522,8 +532,8 @@
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center_horizontal" >
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
 
                         <ImageView
                             android:id="@+id/edit_plusSet2"
@@ -540,41 +550,14 @@
                             android:textSize="22dp" />
 
                         <ImageView
-                           android:id="@+id/edit_minusSet"
+                            android:id="@+id/edit_minusSet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_ai_order_minus" />
                     </LinearLayout>
                 </LinearLayout>
-
             </LinearLayout>
-            
-            <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
-        android:orientation="vertical" >
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:background="@color/light_orange" />
-
-        <Button
-            android:id="@+id/gameProfileStartMatchButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/button_statelist"
-            android:text="@string/start_match"
-            android:textStyle="bold" />
-    </LinearLayout>
-
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>

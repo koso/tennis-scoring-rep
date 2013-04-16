@@ -1,8 +1,14 @@
 package quintec.tenis;
 
+import java.io.Serializable;
+
 import quintec.tenis.math.ScoreMath.SCORE;
 
-public class Score {
+public class Score implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int pl1_set1 = 0;
 	private int pl1_set2 = 0;
 	private int pl1_set3 = 0;

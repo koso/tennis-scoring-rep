@@ -13,7 +13,7 @@ public class CalculateCourtSideChanges {
 		boolean setJustEnded = score.getPl1_score() == 0 && score.getPl2_score() == 0;
 		if (setJustEnded && gameMode != Score.GAME_MODE.TIEBREAK) {
 			if (sum == 1) {
-				result = false;
+				result = true;
 			}
 			else if ((sum - 1) > 0 && (sum - 1) % 2 == 0) {
 				result = true;
