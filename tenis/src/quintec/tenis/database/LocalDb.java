@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import quintec.tenis.SdcardFolderManager;
+
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,7 +15,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class LocalDb extends SQLiteOpenHelper {
 
-	private static String DB_PATH = "sdcard/";
 	private static String DB_NAME = "tenis.db";
 	private SQLiteDatabase myDataBase;
 	private final Context myContext;
@@ -56,7 +57,7 @@ public class LocalDb extends SQLiteOpenHelper {
 		SQLiteDatabase checkDB = null;
 
 		try {
-			String myPath = DB_PATH + DB_NAME;
+			String myPath = SdcardFolderManager.getMainFolderPath() + DB_NAME;
 			checkDB = SQLiteDatabase.openDatabase(myPath, null,
 					SQLiteDatabase.OPEN_READONLY);
 
@@ -81,7 +82,7 @@ public class LocalDb extends SQLiteOpenHelper {
 		InputStream myInput = myContext.getAssets().open(DB_NAME);
 
 		// Path to the just created empty db
-		String outFileName = DB_PATH + DB_NAME;
+		String outFileName = SdcardFolderManager.getMainFolderPath() + DB_NAME;
 
 		// Open the empty db as the output stream
 		OutputStream myOutput = new FileOutputStream(outFileName);
@@ -108,7 +109,7 @@ public class LocalDb extends SQLiteOpenHelper {
 			e.printStackTrace();
 		}
 		// Open the database
-		String myPath = DB_PATH + DB_NAME;
+		String myPath = SdcardFolderManager.getMainFolderPath() + DB_NAME;
 		myDataBase = SQLiteDatabase.openDatabase(myPath, null,
 				SQLiteDatabase.OPEN_READWRITE);
 		return myDataBase;

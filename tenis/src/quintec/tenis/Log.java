@@ -12,9 +12,10 @@ import java.util.TimeZone;
 
 public class Log {
 	private static final String DATEFORMAT = "yyyy-MM-dd HH:mm:ss";
+	private static String FILE_NAME = "log.txt";
 
 	public static void LogToFile(String text) {
-		File logFile = new File("sdcard/log.txt");
+		File logFile = new File(SdcardFolderManager.getMainFolderPath() + FILE_NAME);
 		if (!logFile.exists()) {
 			try {
 				logFile.createNewFile();
