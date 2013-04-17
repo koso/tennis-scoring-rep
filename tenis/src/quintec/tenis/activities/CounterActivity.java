@@ -97,6 +97,7 @@ public class CounterActivity extends LocaleActivity {
 			showScore(score);
 			setVisiblityForSets(score);
 			setServiceIndentificator(score);
+			updateBigServiceIdentificator();
 		}
 		else {
 			setVisiblityForSets(score);
@@ -393,6 +394,7 @@ public class CounterActivity extends LocaleActivity {
 		
 		calculateBallsChange();
 		calculateIfChangeSides();
+		updateBigServiceIdentificator();
 		
 		/*Runnable a = new Runnable() {
 			
@@ -457,6 +459,7 @@ public class CounterActivity extends LocaleActivity {
 		
 		calculateBallsChange();
 		calculateIfChangeSides();
+		updateBigServiceIdentificator();
 		
 		/*Runnable a = new Runnable() {
 			
@@ -628,16 +631,40 @@ public class CounterActivity extends LocaleActivity {
 	private void setServiceIndentificator(Score score) {
 		int whichPlayerServing = score.getWhichPlayerServing();
 		if (whichPlayerServing == 1) {
-			servicePl2.setVisibility(View.INVISIBLE);
+//			servicePl2.setVisibility(View.INVISIBLE);
 			servicePl2Score.setVisibility(View.INVISIBLE);
-			servicePl1.setVisibility(View.VISIBLE);
+//			servicePl1.setVisibility(View.VISIBLE);
 			servicePl1Score.setVisibility(View.VISIBLE);
 		}
 		else if (whichPlayerServing == 2) {
-			servicePl2.setVisibility(View.VISIBLE);
+//			servicePl2.setVisibility(View.VISIBLE);
 			servicePl2Score.setVisibility(View.VISIBLE);
-			servicePl1.setVisibility(View.INVISIBLE);
+//			servicePl1.setVisibility(View.INVISIBLE);
 			servicePl1Score.setVisibility(View.INVISIBLE);
+		}
+	}
+	
+	private void updateBigServiceIdentificator() {
+		int whichPlayerServing = score.getWhichPlayerServing();
+		if (whichPlayerServing == 1) {
+			if (player1IsOnHisSide) {
+				servicePl2.setVisibility(View.INVISIBLE);
+				servicePl1.setVisibility(View.VISIBLE);
+			}
+			else {
+				servicePl2.setVisibility(View.VISIBLE);
+				servicePl1.setVisibility(View.INVISIBLE);
+			}
+		}
+		else if (whichPlayerServing == 2) {
+			if (player1IsOnHisSide) {
+				servicePl2.setVisibility(View.VISIBLE);
+				servicePl1.setVisibility(View.INVISIBLE);
+			}
+			else {
+				servicePl2.setVisibility(View.INVISIBLE);
+				servicePl1.setVisibility(View.VISIBLE);
+			}
 		}
 	}
 	
@@ -709,6 +736,7 @@ public class CounterActivity extends LocaleActivity {
 			player1IsOnHisSide = false;
 		
 		setPlayerNames();
+		updateBigServiceIdentificator();
 	}
 	
 	/******** METHODS FOR DIALOG AFTER MATCH FINISH ********/

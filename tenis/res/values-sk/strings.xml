@@ -5,8 +5,8 @@
     <string name="app_name">Tennis Scoring</string>
     <string name="info">Info</string>
     <string name="settings">Nastavenia</string>
-    <string name="undo">Späť</string>
-    <string name="redo">Dopredu.</string>
+    <string name="undo">Krok späť</string>
+    <string name="redo">Krok dopredu</string>
     <string name="stop_match">Ukonciť zápas</string>
     <string name="edit_match">Editovať zápas</string>
     <string name="select_language">Výber jazyka</string>
@@ -24,7 +24,7 @@
     <string name="service_dialog_message">Zvoľ hráča/tím ktorý podáva ako prvý.</string>
     <string name="vs">vs.</string>
     <string name="AppName">Tenis Math</string>
-    <string name="Version">Version 1.0.0</string>
+    <string name="Version">Version 2.0.0</string>
     <string name="Copy">Copyright (c) 2012</string>
     <string name="Qint">Qintec s.r.o.</string>
     <string name="Rights">All rights reserved</string>
@@ -36,9 +36,9 @@
     <string name="three_sets_with_super_tie_break">3 sety so super tie breakom</string>
     <string name="player_one">Hráč 1:</string>
     <string name="player_two">Hráč 2:</string>
-    <string name="team_one">Tim 1:</string>
-    <string name="team_two">Tim 2:</string>
-    <string name="restartApp">Prosim, restartujte aplikaciu for pre kompletny preklad.</string>
+    <string name="team_one">Tím 1:</string>
+    <string name="team_two">Tím 2:</string>
+    <string name="restartApp">Prosím, reštartujte si aplikáciu pre kompletný preklad.</string>
     <string name="dialog_match_ended">Zápas sa skončil.</string>
     <string name="No">Nie</string>
     <string name="Yes">Áno</string>
@@ -48,11 +48,13 @@
     <string name="User_C">User:</string>
     <string name="Pass_C">Heslo:</string>
     <string name="networkError">Network connection error. Please check database settings.</string>
-    <string name="noMatches">No matches</string>
+    <string name="noMatches">Žiadne dostupné zapasy.</string>
     <string name="loading"> Načítavanie...</string>
-    <string name="DatabaseSettings">Database settings</string>
+    <string name="DatabaseSettings">Nastavenia web databázy</string>
     <string name="classic_points">Classic points</string>
      <string name="tiebreak_points">Tiebreak points</string>
+     
+    <string name="pauseMatchDialog_title">Preru</string>
      
     <string name="ballChangeDialog_title">Výmena loptičiek</string>
     <string name="ballChangeDialog_prepare">Priprav nové loptičky na výmenu.</string>

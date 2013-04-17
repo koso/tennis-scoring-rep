@@ -234,6 +234,7 @@ public final class R {
         public static final int networkError=0x7f05002e;
         public static final int next=0x7f05000c;
         public static final int noMatches=0x7f05002f;
+        public static final int pauseMatchDialog_title=0x7f05003a;
         public static final int player_one=0x7f050021;
         public static final int player_two=0x7f050022;
         public static final int redo=0x7f050005;
